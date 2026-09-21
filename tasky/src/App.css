@@ -46,7 +46,20 @@ div {
 	font-size: 0.9em;
 }
 
-.level{
+.Low{
+	background:green;
+
+	font-style:italic;
+	font-size:0.9em;
+}
+.Medium{
+	background:yellow;
+	font-style:italic;
+	font-size:0.9em;
+	color:black;
+}
+.High{
+	background:red;
 	font-style:italic;
 	font-size:0.9em;
 }
