@@ -5,6 +5,7 @@ import React, { useState } from 'react';
 import { v4 as uuidv4 } from 'uuid';import Typography from '@mui/material/Typography';
 import Container from '@mui/material/Container';
 import Grid from '@mui/material/Grid';
+import DeleteIcon from '@mui/icons-material/Delete';
 
 
 function App() {
@@ -69,6 +70,7 @@ function App() {
 	}
     return (
     <div className="container">
+	
 		<Container component="main">
 		  <Typography
 			component="h1"
@@ -76,19 +78,19 @@ function App() {
 			align="center"
 			gutterBottom
 			sx={{
-			  backgroundColor: 'gray',
+			  backgroundColor: 'darkred',
 			  textAlign: 'center',
 			  color: 'white',
 			  padding: '20px',
 			  margin: '20px 0 40px 0',
-			  borderRadius: '4px'
+			  borderRadius: '4px',
+			  fontWeight: 'bold',
+			  fontFamily: 'comic'
 			}}
 		  >
 			Tasky
 		  </Typography>
 		</Container>
-            
-			
 
 		<Container maxWidth="md" component="main">
 			<Grid

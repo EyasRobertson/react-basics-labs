@@ -6,26 +6,17 @@ import CardContent from '@mui/material/CardContent';
 import CardHeader from '@mui/material/CardHeader';
 import Grid from '@mui/material/Grid';
 import Typography from '@mui/material/Typography';
+import DeleteIcon from '@mui/icons-material/Delete';
+import DoneIcon from '@mui/icons-material/Done';
 
 const Task = (props) => {
     
     return (
-	/*
-		<div className="card" style={{backgroundColor: props.done ? 'lightgrey' : '#5bb4c4'}}>
-			<p className="title">{props.title}</p>
-			<p>Due: {props.deadline}</p>
-			<p className="describe">{props.description}</p>
-			<p className={props.level}>{props.level}</p>
-			
-			<button onClick={props.markDone} className="doneButton">Done</button>
-			<button className='deleteButton' onClick={props.deleteTask}>Delete</button>
-		</div>
-		*/
-		<Grid key={props.id} size={{ xs: 12, md: 4 }}>
+		<Grid key={props.id} size={{ xs: 8, sm:6, md: 4 }}>
 			<Card
 				sx={{
-				  backgroundColor: props.done ? 'lightgrey' : 'lightblue',
-				  padding: '20px'
+				  backgroundColor: props.done ? 'darkgreen' : 'lightgreen',
+				  padding: '20px',
 				}}
 			>
 				<CardHeader
@@ -37,14 +28,15 @@ const Task = (props) => {
 					textAlign: 'center'
 				  }}
 				/>
-				<CardContent>
+				<CardContent >
 					<Box
 						sx={{
 						  display: 'flex',
 						  justifyContent: 'center',
 						  alignItems: 'baseline',
 						  mb: 2,
-						  padding: '20px'
+						  padding: '20px',
+						  color: props.done ? 'white' : 'black'
 						}}
 					>
 						<Typography
@@ -59,13 +51,22 @@ const Task = (props) => {
 						component="p"
 						variant="subtitle1"
 						align="center"
-						sx={{ fontStyle: 'italic' }}
+						sx={{ fontStyle: 'italic' ,
+						  color: props.done ? 'white' : 'black'}}
 						>
 						{props.description}
 					    </Typography>
 						
-						//Fix this please
-						<Typography className={props.level}>
+						<Typography className={props.level}
+						sx={{
+						  backgroundColor: props.level=='Low' ? 'darkgreen' : props.level=='Medium' ? 'yellow' : 'darkred' ,
+						  color: props.level=='Medium' ? 'blck' : 'white',
+						  justifyContent: 'center',
+						  alignItems: 'baseline',
+						  mb: 2,
+						  padding: '20px'
+						}}
+						>
 						{props.level}
 						</Typography>
 				</CardContent>
@@ -81,7 +82,8 @@ const Task = (props) => {
 						color="success"
 						onClick={props.markDone}
 					>
-					Done
+					
+					<DoneIcon/>
 					</Button>
 					<Button
 						variant="contained"
@@ -89,7 +91,7 @@ const Task = (props) => {
 						color="error"
 						onClick={props.deleteTask}
 					>
-						Delete
+						<DeleteIcon/>
 					</Button>
 				</CardActions>
 			</Card>
